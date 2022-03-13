@@ -1,3 +1,6 @@
+from os import dup
+
+
 test_list = input("Enter your items seperated by comma: ").split(',')
 
 def Sorting(test_list):
@@ -44,4 +47,13 @@ def Sorting(test_list):
         print("Your sorted list is: ")
         print(test_list)
 
-Sorting(test_list)
+def Unique(test_list):
+    UniqueList = []
+    for i in test_list:
+        if i not in UniqueList:
+            UniqueList.append(i)
+    return UniqueList
+
+Sorting(Unique(test_list))
+
+
