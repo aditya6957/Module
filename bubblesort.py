@@ -17,16 +17,8 @@ def BubbleSort(test_list):
                     temp = test_list[j]
                     test_list[j] = test_list[j+1]
                     test_list[j+1] = temp
+        print("Your sorted list is: ")
         print(test_list)
 	
-
-x = int(input("Enter the size of your list: "))
-test_list = []
-for i in range(0,x):
-    print("Enter element number: ", i+1)
-    elements = int(input())
-    test_list.append(elements)
-print("Your list is: \n", test_list)
-print("\n")
-print("Your sorted list is: \n")
-print(BubbleSort(test_list))
+test_data = list(input("enter your elements sepetrated by space: ").strip().split())
+BubbleSort(test_data)

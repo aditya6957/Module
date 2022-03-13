@@ -1,30 +1,30 @@
-# Python3 code to demonstrate
-# to check if list is sorted
-# using naive method
+from re import search
 
-# initializing list
-test_list = [1, 4, 9, 8, 10]
+def BubbleSort(test_list):
+    iterations = 0
+    for i in range(len(test_list)-1):
+        is_sorted = True
+        iterations += 1
+        for j in range(len(test_list)-1):
+            if test_list[j] > test_list[j+1]:
+                # swapping
+                test_list[j], test_list[j+1] = test_list[j+1], test_list[j]
+                is_sorted = False
 
-# printing original list
-print ("Original list : " + str(test_list))
+        if is_sorted:
+            break
+    print(f"iterations done: {iterations}")
+    return True
 
-# using naive method to
-# check sorted list
-flag = 0
-i = 1
-while i < len(test_list):
-	if(test_list[i] < test_list[i - 1]):
-		flag = 1
-	i += 1
-	
-# printing result
-if (not flag) :
-	print ("Yes, List is sorted.")
-else :
-    for i in range(len(test_list)-1,0,-1):
-        for j in range(i):
-            if test_list[j]>test_list[j+1]:
-                temp = test_list[j]
-                test_list[j] = test_list[j+1]
-                test_list[j+1] = temp
-    print(test_list)
+
+if __name__ == "__main__":
+    # x = int(input("Enter the size of your list: "))
+    test_data = [
+        [2, 1, 5, 3]
+    ]
+
+    for test_array in test_data:
+        print("\n {}".format("-"*50))
+        print("orig list is: \n", test_array)
+        ret = BubbleSort(test_array)
+        print("sorted list is: \n", test_array)
