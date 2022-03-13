@@ -1,30 +1,36 @@
-from re import search
+A = a = 1
+B = b = 2
+C = c = 3
+D = d = 4
+E = e = 5
+F = f = 6
+G = g = 7
+H = h = 8
+I = i = 9
+J = j = 10
+K = k = 11
+L = l = 12
+M = m = 13
+N = n = 14
+O = o = 15
+P = p = 16
+Q = q = 17
+R = r = 18
+S = s = 19
+T = t = 20
+U = u = 21
+V = v = 22
+W = w = 23
+X = x = 24
+Y = y = 25
+Z = z = 26
 
-def BubbleSort(test_list):
-    iterations = 0
-    for i in range(len(test_list)-1):
-        is_sorted = True
-        iterations += 1
-        for j in range(len(test_list)-1):
-            if test_list[j] > test_list[j+1]:
-                # swapping
-                test_list[j], test_list[j+1] = test_list[j+1], test_list[j]
-                is_sorted = False
-
-        if is_sorted:
-            break
-    print(f"iterations done: {iterations}")
-    return True
-
-
-if __name__ == "__main__":
-    # x = int(input("Enter the size of your list: "))
-    test_data = [
-        [2, 1, 5, 3]
-    ]
-
-    for test_array in test_data:
-        print("\n {}".format("-"*50))
-        print("orig list is: \n", test_array)
-        ret = BubbleSort(test_array)
-        print("sorted list is: \n", test_array)
+test_list = ['a1b', 'a1a']
+for i in range(len(test_list)-1,0,-1):
+    for j in range(i):
+        if test_list[j]>test_list[j+1]:
+            temp = test_list[j]
+            test_list[j] = test_list[j+1]
+            test_list[j+1] = temp
+print("Your sorted list is: ")
+print(test_list)

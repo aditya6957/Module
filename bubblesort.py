@@ -1,22 +1,19 @@
 from re import search
 
 def BubbleSort(test_list):
-    flag = 0
+    sorted = True
     i = 1
     for i in range(1, len(test_list)):
         if(test_list[i] < test_list[i - 1]):
-            flag = 1
-        i += 1
+            sorted = False
     
-    if(not flag):
+    if(sorted):
         print("The list is already sorted")
     else:
-        for i in range(len(test_list)-1,0,-1):
-            for j in range(i):
+        for i in range(len(test_list)-1):
+            for j in range(len(test_list)-1):
                 if test_list[j]>test_list[j+1]:
-                    temp = test_list[j]
-                    test_list[j] = test_list[j+1]
-                    test_list[j+1] = temp
+                    test_list[j],test_list[j+1]=test_list[j+1],test_list[j]
         print("Your sorted list is: ")
         print(test_list)
 	
