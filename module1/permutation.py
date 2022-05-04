@@ -11,6 +11,7 @@ def permutation(lst):
 	for i in range(len(lst)):
 	    m = lst[i]
         # remLst = remaning list
+		
 	    remLst = lst[:i] + lst[i+1:]
 
 	    for p in permutation(remLst):

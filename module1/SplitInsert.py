@@ -4,3 +4,5 @@ def insert_sting_middle(str, word):
 yourstring = input("Enter your string: \n")
 word = input("Enter what you want to insert: \n")
 insert_sting_middle(yourstring, word)
+
+
