@@ -1,22 +1,33 @@
-# Python3 program to Convert a
-# list to dictionary
+input ='''device1   vlan1
+				device2   vlan2
+				device3   vlan1
+				device2   vlan3
+				device1   vlan4
+				device2   vlan1
+				device3   vlan6'''
 
-def Convert(lst):
-	res_dct = {lst[i]: lst[i + 1] for i in range(0, len(lst), 2)}
-	return res_dct
-		
-# Driver code
-lst1 = ['device1', 'vlan1', 'device2', 'vlan2', 'device3', 'vlan1', 'device2', 'vlan3', 'device1',
-        'vlan4', 'device2', 'vlan1', 'device3', 'vlan6']
-#lst = ['a', 1, 'b', 2, 'c', 3]
+initial_list = input.split()
 
-#print(Convert(lst1))
 
-my_list = ['device1', 'vlan1', 'device2', 'vlan2', 'device3', 'vlan1', 'device2', 'vlan3', 'device1',
-        'vlan4', 'device2', 'vlan1', 'device3', 'vlan6']
+def list_splitter(sample_list, n):
+	# looping till length l
+	for i in range(0, len(sample_list), n):
+		yield sample_list[i:i + n]
 
-from collections import defaultdict
-new_dict = defaultdict(list)
-for (key, value) in my_list:
-    new_dict[key].append(value)
-print(new_dict)
+final_list = list(list_splitter(initial_list, 2))
+
+d = {}
+for key, value in final_list:
+   if key not in d.keys():
+      d[key] = [key]
+   d[key].append(value)
+result = list(d.values())
+print(d)
+items = {}
+for line in result:
+    key, value = line[0], line[1:]
+    items[key] = value
+print(items)
+
+# itemDict = {item[0]: item[1:] for item in items}
+
