@@ -2,22 +2,37 @@
 Program to Convert Lists into Similar key value lists
 '''
 
-# def list_to_dict(test_list1, test_list2):
-#     '''
-#     Fuction to Convert Lists into Similar key value lists
-#     '''
-#     # creating a mesh of keys with empty values list
-#     res = {key: [] for key in test_list1}
-  
-#     # loop to iterate through keys and values
-#     for key, val in zip(test_list1, test_list2):
-#         res[key].append(val)
-  
-#     # printing result 
-#     print("The mapped dictionary : " + str(res))
+input ='''device1   vlan1
+				device2   vlan2
+				device3   vlan1
+				device2   vlan3
+				device1   vlan4
+				device2   vlan1
+				device3   vlan6'''
 
-# if __name__ == "__main__":
-#     input = ["device1", "device2", "device3", "device2", "device1", "device2", "device3"]
-#     in_string = ["vlan1", "vlan2", "vlan1", "vlan3", "vlan4", "vlan1", "vlan6"]
-#     list_to_dict(input, in_string)
+initial_list = input.split()
+
+
+def list_splitter(sample_list, n):
+	# looping till length l
+	for i in range(0, len(sample_list), n):
+		yield sample_list[i:i + n]
+
+final_list = list(list_splitter(initial_list, 2))
+
+d = {}
+for key, value in final_list:
+   if key not in d.keys():
+      d[key] = [key]
+   d[key].append(value)
+result = list(d.values())
+print(d)
+items = {}
+for line in result:
+    key, value = line[0], line[1:]
+    items[key] = value
+print(items)
+
+# itemDict = {item[0]: item[1:] for item in items}
+
 
