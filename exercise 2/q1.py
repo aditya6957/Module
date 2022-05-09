@@ -12,5 +12,7 @@ with open("sample1[4051].yaml") as infile:
     print(os_list)
 
 #Open a file to write the JSON output. The 'w' makes the file writable
-#with open("c:\temp\python_operating-systems.json", 'w') as outfile:
-     # Marshall the JSON, setting "indent" makes the file more readable json.dump(os_list, outfile, indent=4) print("JSON file written.")
+with open("python_operating-systems.json", 'w') as outfile:
+     # Marshall the JSON, setting "indent" makes the file more readable 
+    json.dump(os_list, outfile, indent=4) 
+    print("JSON file written.")
