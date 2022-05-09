@@ -1,12 +1,17 @@
 1. Read yaml file and write into json file sample files are provided with the mail sample1.yaml
-2. For the same above code write exception handing so that the code should handle wrong file and print it, sample2.yaml having wrong yaml format
+2. For the same above code write exception handing so that the code should handle wrong file and 
+	print it, sample2.yaml having wrong yaml format
 3. create a base class on one file of folder 'a' file named 'shapes' and a method to find area, 
-       create another file on another folder named 'b' and create 3 classes for rectangle, square and triangle
-	   inheritting class shapes and those should contain methods to find circumstance and perimeter,
-       find area, circumstance and perimeter of rectangle, square, triangle
-4. Create tic tac toe game using python classes, also use docstrings, anotations, comment, this code should be neat with following pip standards,(note: this might take time, let me know once completed.)
-	https://www.geeksforgeeks.org/pep-8-coding-style-guide-python/            to check the common standards followed
-	pylint sample.py          to check score of the python file sample.py and pep issues it found. Try to increase score as much as possible.
+       create another file on another folder named 'b' and create 3 classes for rectangle, square 
+	   and triangle inheritting class shapes and those should contain methods to find circumstance 
+	   and perimeter, find area, circumstance and perimeter of rectangle, square, triangle
+4. Create tic tac toe game using python classes, also use docstrings, anotations, comment, this code 
+	should be neat with following pip standards,
+	(note: this might take time, let me know once completed.)
+	https://www.geeksforgeeks.org/pep-8-coding-style-guide-python/            
+	to check the common standards followed
+	pylint sample.py          to check score of the python file sample.py and pep issues it found. 
+	Try to increase score as much as possible.
 	Note: 	use list of list to store the possition and get input based on that possition
 		ex:  at start it should show      
 				[1, 2, 3]
