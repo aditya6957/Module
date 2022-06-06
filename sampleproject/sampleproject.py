@@ -112,7 +112,7 @@ class TriggerShowVrf(aetest.Testcase):
     @aetest.test
     def show_vrf(self, testbed):
         vrf_obj = ShowVrf()
-        vrf_output = vrf_obj.vrf_cli(testbed)
+        vrf_output = vrf_obj.test(testbed)
         print(vrf_output)
 
 class ShowVlan:
@@ -169,7 +169,7 @@ class TriggerShowVlan(aetest.Testcase):
     @aetest.test
     def show_vlan(self, testbed):
         vlan_obj = ShowVlan()
-        vlan_output = vlan_obj.vlan_cli(testbed)
+        vlan_output = vlan_obj.test(testbed)
         print(vlan_output)
 
 class CommonCleanup(aetest.CommonCleanup):
